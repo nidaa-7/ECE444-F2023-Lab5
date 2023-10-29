@@ -90,13 +90,15 @@ def test_delete_message(client):
 def test_login_required_delete(client):
     """Test that login is required to delete entries"""
     # Access the delete route without authentication
-    rv = client.get('/delete/1')  # Replace '1' with a valid post_id that you want to test
+    rv = client.get(
+        "/delete/1"
+    )  # Replace '1' with a valid post_id that you want to test
 
     # Ensure it returns an unauthorized status code (401) due to login required
     assert rv.status_code == 401
     data = json.loads(rv.data)
-    assert data['status'] == 0
-    assert data['message'] == 'Please log in.'
+    assert data["status"] == 0
+    assert data["message"] == "Please log in."
 
 
 def test_search(client):
@@ -105,7 +107,9 @@ def test_search(client):
     login(client, app.config["USERNAME"], app.config["PASSWORD"])
     client.post(
         "/add",
-        data=dict(title="Test Post", text="This is a test post for search functionality"),
+        data=dict(
+            title="Test Post", text="This is a test post for search functionality"
+        ),
         follow_redirects=True,
     )
     logout(client)
