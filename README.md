@@ -1,6 +1,7 @@
 # ECE444-F2023-Lab5
 
 #### This repo is from https://github.com/mjhea0/flaskr-tdd
+#### I have added tests for our group project under the comment Nidaa Rabah - Tests. They are for the search page and the autocomplete function. Link submitted. 
 
 ## What are the pros and cons of TDD?
 ## Pros:
